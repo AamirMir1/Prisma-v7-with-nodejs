@@ -7,6 +7,7 @@ const errorMiddleware = (
   },
   _: Request,
   res: Response,
+  next: NextFunction,
 ) => {
   const message = error?.message || "Internal Server Error";
   const statusCode = error?.statusCode || 500;

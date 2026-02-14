@@ -1,3 +1,5 @@
+import type { NextFunction, Request, Response } from "express";
+
 class ErrorHandler extends Error {
   constructor(
     public message: string,
@@ -9,4 +11,10 @@ class ErrorHandler extends Error {
   }
 }
 
-export default ErrorHandler;
+type PassedFunctionType = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => Promise<void | Response<any, Record<string, any>>>;
+
+export { ErrorHandler };
