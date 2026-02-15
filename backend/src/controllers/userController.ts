@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
-import { prisma } from "../lib/db";
-import { ErrorHandler } from "../utils/ErrorHandler";
+import { prisma } from "../lib/db.js";
+import { ErrorHandler } from "../utils/ErrorHandler.js";
 
 const createUser = async (req: Request, res: Response, next: NextFunction) => {
   const { name } = req.body;

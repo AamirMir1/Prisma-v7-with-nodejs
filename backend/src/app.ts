@@ -1,8 +1,7 @@
-import express from "express";
 import dotenv from "dotenv";
-import { prisma } from "./lib/db";
-import errorMiddleware from "./middlewares/errorMiddleware";
-import userRoutes from "./routes/userRoutes";
+import express from "express";
+import errorMiddleware from "./middlewares/errorMiddleware.js";
+import userRoutes from "./routes/userRoutes.js";
 
 dotenv.config();
 
@@ -17,3 +16,5 @@ app.use(errorMiddleware);
 app.listen(3000, () => {
   console.log(`server is working on port:${3000}`);
 });
+
+export default app;
